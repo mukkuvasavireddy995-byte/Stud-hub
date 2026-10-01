@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>StudentHub | JDBC</title><link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<header><div><small>JAVA • JDBC • MYSQL</small><h1>StudentHub</h1><p>Full-stack student management with raw JDBC.</p></div><span id="status">Checking database...</span></header>
+<main>
+<section class="hero"><div><b>JDBC CRUD</b><h2>Manage student records.</h2><p>Add, search, update and delete records through a Java backend connected to MySQL.</p></div><div class="stat"><strong id="total">0</strong><small>Students</small></div></section>
+<section class="grid">
+<article class="card">
+<div class="title"><div><small>RECORD</small><h3 id="formTitle">Add Student</h3></div><button id="cancel" class="ghost hidden" onclick="resetForm()">Cancel</button></div>
+<form id="form">
+<input type="hidden" id="id">
+<label>Name<input id="name" required maxlength="100"></label>
+<label>Email<input id="email" type="email" required maxlength="150"></label>
+<label>Course<input id="course" required maxlength="100"></label>
+<label>Year<select id="year" required><option value="">Select</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option></select></label>
+<label>Phone<input id="phone" maxlength="20"></label>
+<button class="primary" type="submit" id="submit">Add Student</button>
+</form>
+</article>
+<article class="card records">
+<div class="title"><div><small>DATABASE</small><h3>Student Records</h3></div><input id="search" placeholder="Search..."></div>
+<div id="msg" class="hidden"></div>
+<table><thead><tr><th>ID</th><th>Student</th><th>Course</th><th>Year</th><th>Phone</th><th>Actions</th></tr></thead><tbody id="rows"></tbody></table>
+<p id="empty" class="empty hidden">No records found.</p>
+</article>
+</section>
+</main>
+<script src="/app.js"></script>
+</body></html>
